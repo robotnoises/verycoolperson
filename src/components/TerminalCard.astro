@@ -10,18 +10,16 @@ const commands = [
 	},
 	{
 		command: "links",
-		output: ["/blog  /work  /cv  /about"],
+		output: ["/blog  /cv  /about"],
 	},
 ];
 ---
 
-<aside
-	class="overflow-hidden rounded-[18px] border border-white/15 bg-gradient-to-b from-white/[0.055] to-white/[0.02] font-mono shadow-[0_24px_80px_rgba(0,0,0,0.28)] max-lg:max-w-xl"
-	aria-label="Current status">
-	<div class="flex gap-2 border-b border-white/15 bg-white/[0.035] p-4">
-		<span class="h-3 w-3 rounded-full bg-[#b084ff]"></span>
-		<span class="h-3 w-3 rounded-full bg-[#ffd866]"></span>
-		<span class="h-3 w-3 rounded-full bg-[#8ff0a4]"></span>
+<aside class="overflow-hidden rounded-none border border-white/10 bg-white/[0.015] font-mono max-lg:max-w-xl" aria-label="Current status">
+	<div class="flex gap-2 border-b border-white/10 p-4">
+		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
+		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
+		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
 	</div>
 
 	<div class="space-y-5 p-5 text-sm leading-7 text-[#a7adba]">
@@ -29,7 +27,7 @@ const commands = [
 			commands.map(({ command, output }) => (
 				<section>
 					<p class="m-0">
-						<span class="text-[#8ff0a4]">$</span> {command}
+						<span class="text-[#facc15]">$</span> {command}
 					</p>
 					{output.map((line) => (
 						<p class="m-0">{line}</p>

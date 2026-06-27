@@ -11,7 +11,7 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 <BaseLayout title={`${title} | David`} description={description}>
 	<article>
 		<header class="py-12">
-			<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">Writing</p>
+			<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#facc15] uppercase">Writing</p>
 			<h1 class="m-0 max-w-[16ch] text-[clamp(2.75rem,7vw,5.75rem)] leading-[1.02] font-bold tracking-[-0.055em]">
 				{title}
 			</h1>
@@ -28,7 +28,7 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 			</p>
 		</header>
 		<div
-			class="[&_a]:text-[#d7c3ff] [&_a:hover]:text-[#8ff0a4] [&_blockquote]:border-l-4 [&_blockquote]:border-[#b084ff] [&_blockquote]:pl-5 [&_code]:rounded-md [&_code]:border [&_code]:border-white/15 [&_code]:bg-white/[0.06] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_h1]:text-[clamp(2.75rem,7vw,5.75rem)] [&_h1]:leading-[1.02] [&_h1]:font-bold [&_h1]:tracking-[-0.055em] [&_h2]:text-[clamp(1.6rem,4vw,2.45rem)] [&_h2]:leading-[1.02] [&_h2]:font-bold [&_h2]:tracking-[-0.055em] [&_h3]:text-2xl [&_h3]:font-bold [&_img]:rounded-xl [&_ol]:list-decimal [&_ol]:pl-6 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:border [&_pre]:border-white/15 [&_pre]:bg-[#080a0f] [&_pre]:p-4 [&_pre_code]:border-0 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_table]:w-full [&_td]:border [&_td]:border-white/15 [&_td]:p-2 [&_th]:border [&_th]:border-white/15 [&_th]:p-2 [&_ul]:list-disc [&_ul]:pl-6 [&>*+*]:mt-4">
+			class="[&_a]:text-[#f4efe7] [&_a:hover]:text-[#f4efe7] [&_blockquote]:border-l-4 [&_blockquote]:border-[#f4efe7] [&_blockquote]:pl-5 [&_code]:rounded-md [&_code]:border [&_code]:border-white/10 [&_code]:bg-white/[0.06] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_h1]:text-[clamp(2.75rem,7vw,5.75rem)] [&_h1]:leading-[1.02] [&_h1]:font-bold [&_h1]:tracking-[-0.055em] [&_h2]:text-[clamp(1.6rem,4vw,2.45rem)] [&_h2]:leading-[1.02] [&_h2]:font-bold [&_h2]:tracking-[-0.055em] [&_h3]:text-2xl [&_h3]:font-bold [&_img]:rounded-none [&_ol]:list-decimal [&_ol]:pl-6 [&_pre]:overflow-x-auto [&_pre]:rounded-none [&_pre]:border [&_pre]:border-white/10 [&_pre]:bg-[#080a0f] [&_pre]:p-4 [&_pre_code]:border-0 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_table]:w-full [&_td]:border [&_td]:border-white/10 [&_td]:p-2 [&_th]:border [&_th]:border-white/10 [&_th]:p-2 [&_ul]:list-disc [&_ul]:pl-6 [&>*+*]:mt-4">
 			<slot />
 		</div>
 	</article>

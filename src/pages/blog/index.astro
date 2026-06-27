@@ -8,7 +8,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 
 <BaseLayout title="Blog | David" description="Essays, notes, and updates.">
 	<section class="py-12">
-		<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">Blog</p>
+		<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#facc15] uppercase">Blog</p>
 		<h1 class="m-0 max-w-[16ch] text-[clamp(2.75rem,7vw,5.75rem)] leading-[1.02] font-bold tracking-[-0.055em]">Writing</h1>
 		<p class="mt-6 max-w-2xl text-[clamp(1.15rem,3vw,1.45rem)] text-[#a7adba]">Essays, notes, updates, and fragments.</p>
 	</section>
@@ -16,8 +16,8 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 	<ul class="m-0 grid list-none gap-0 p-0">
 		{
 			posts.map((post, index) => (
-				<li class:list={["border-b border-white/15", index === 0 && "border-t"]}>
-					<a class="block py-5 text-[#f4efe7] no-underline hover:text-[#8ff0a4]" href={`/blog/${post.id}/`}>
+				<li class:list={["border-b border-white/10", index === 0 && "border-t"]}>
+					<a class="block py-5 text-[#f4efe7] no-underline hover:text-[#facc15]" href={`/blog/${post.id}/`}>
 						<h2 class="m-0 mb-2 text-[clamp(1.6rem,4vw,2.45rem)] leading-[1.02] font-bold tracking-[-0.055em]">{post.data.title}</h2>
 						<p class="text-[#a7adba]">{post.data.description}</p>
 						<span class="font-mono text-sm text-[#a7adba]">
