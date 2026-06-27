@@ -1,5 +1,10 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// Shared site metadata.
 
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'Very Cool Person';
+export const SITE_DESCRIPTION = 'Writing, work, and notes from a very cool person.';
+export const SITE_URL = 'https://verycoolperson.com';
+
+export const SOCIAL_LINKS = [
+	{ label: 'Bluesky', href: 'https://bsky.app/profile/verycoolperson.com' },
+	{ label: 'GitHub', href: 'https://github.com/' },
+];
