@@ -1,8 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 interface Props {
 	title?: string;
@@ -10,21 +10,20 @@ interface Props {
 	wide?: boolean;
 }
 
-const {
-	title = SITE_TITLE,
-	description = SITE_DESCRIPTION,
-	wide = false,
-} = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, wide = false } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-[#0f1117]">
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
-	<body>
+	<body class="min-h-screen bg-[#0f1117] text-lg leading-[1.65] font-[var(--font-atkinson)] text-[#f4efe7] selection:bg-[#b084ff] selection:text-[#11131a]">
+		<div
+			class="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px),radial-gradient(circle_at_18%_0%,rgba(176,132,255,0.28),transparent_28rem),radial-gradient(circle_at_82%_18%,rgba(143,240,164,0.12),transparent_24rem)] bg-[length:44px_44px,44px_44px,auto,auto]">
+		</div>
 		<Header />
-		<main class:list={[wide && 'wide']}>
+		<main class:list={["mx-auto max-w-[calc(100%-2rem)] py-4 md:py-12", wide ? "w-[1120px]" : "w-[760px]"]}>
 			<slot />
 		</main>
 		<Footer />

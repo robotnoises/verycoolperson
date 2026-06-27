@@ -1,6 +1,6 @@
 ---
 title: Hello, world
-description: The first placeholder post on verycoolperson.com.
+description: The first placeholder post on David’s site.
 pubDate: 2026-06-27
 ---
 

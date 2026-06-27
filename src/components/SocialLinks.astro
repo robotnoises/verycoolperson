@@ -1,7 +1,7 @@
 ---
-import Bird from 'lucide-astro/Bird';
-import Github from 'lucide-astro/Github';
-import Rss from 'lucide-astro/Rss';
+import Bird from "lucide-astro/Bird";
+import Github from "lucide-astro/Github";
+import Rss from "lucide-astro/Rss";
 
 interface Props {
 	includeRss?: boolean;
@@ -11,20 +11,22 @@ const { includeRss = true } = Astro.props;
 const iconProps = {
 	size: 22,
 	strokeWidth: 2,
-	'aria-hidden': 'true',
+	"aria-hidden": "true",
 };
 ---
 
-<div class="icon-links" aria-label="Social links">
-	<a href="https://bsky.app/profile/verycoolperson.com" aria-label="Bluesky">
+<div class="flex items-center gap-3.5" aria-label="Social links">
+	<a class="inline-flex items-center justify-center text-[#a7adba] no-underline transition-colors hover:text-[#8ff0a4]" href="https://bsky.app/profile/verycoolperson.com" aria-label="Bluesky">
 		<Bird {...iconProps} />
 	</a>
-	<a href="https://github.com/" aria-label="GitHub">
+	<a class="inline-flex items-center justify-center text-[#a7adba] no-underline transition-colors hover:text-[#8ff0a4]" href="https://github.com/" aria-label="GitHub">
 		<Github {...iconProps} />
 	</a>
-	{includeRss && (
-		<a href="/rss.xml" aria-label="RSS feed">
-			<Rss {...iconProps} />
-		</a>
-	)}
+	{
+		includeRss && (
+			<a class="inline-flex items-center justify-center text-[#a7adba] no-underline transition-colors hover:text-[#8ff0a4]" href="/rss.xml" aria-label="RSS feed">
+				<Rss {...iconProps} />
+			</a>
+		)
+	}
 </div>

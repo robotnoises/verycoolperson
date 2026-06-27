@@ -1,53 +1,73 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import TerminalCard from "../components/TerminalCard.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} wide>
-	<section class="hero">
-		<p class="eyebrow">verycoolperson.com</p>
-		<h1>Writing, work, and notes from a very cool person.</h1>
-		<p class="lede">
-			This is a personal site for essays, projects, professional notes, and whatever else is worth
-			putting somewhere I control.
-		</p>
-		<div class="actions">
-			<a class="button" href="/blog">Read the blog</a>
-			<a class="button secondary" href="/work">See the work</a>
+	<section class="flex min-h-[58vh] flex-col justify-center">
+		<div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_370px]">
+			<div>
+				<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">david / personal site</p>
+				<h1 class="m-0 max-w-[16ch] text-[clamp(2.75rem,7vw,5.75rem)] leading-[1.02] font-bold tracking-[-0.055em] text-[#f4efe7]">Developer. Writer. Builder of useful little systems.</h1>
+				<p class="mt-6 max-w-2xl text-[clamp(1.15rem,3vw,1.45rem)] text-[#a7adba]">A home base for technical notes, project logs, professional artifacts, and ideas that deserve a URL I control.</p>
+				<div class="mt-4 flex flex-wrap items-center gap-4">
+					<a
+						class="inline-flex items-center justify-center rounded-full border border-[#b084ff] bg-[#b084ff] px-4 py-3 font-mono text-sm font-bold text-[#11131a] no-underline transition-colors hover:border-[#8ff0a4] hover:bg-[#8ff0a4] hover:text-[#11131a]"
+						href="/blog">Read writing</a
+					>
+					<a
+						class="inline-flex items-center justify-center rounded-full border border-[#b084ff] bg-transparent px-4 py-3 font-mono text-sm font-bold text-[#d7c3ff] no-underline transition-colors hover:border-[#8ff0a4] hover:bg-[#8ff0a4] hover:text-[#11131a]"
+						href="/work">View work</a
+					>
+				</div>
+			</div>
+
+			<TerminalCard />
 		</div>
 	</section>
 
-	<section class="grid two-up">
-		<div class="card">
-			<h2>Latest writing</h2>
-			{
-				posts.length > 0 ? (
-					<ul class="post-list compact">
-						{posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>{post.data.title}</a>
-								<span><FormattedDate date={post.data.pubDate} /></span>
-							</li>
-						))}
-					</ul>
-				) : (
-					<p>No posts yet.</p>
-				)
-			}
+	<section class="mt-4 border-t border-white/15 pt-8">
+		<div class="mb-4 flex items-baseline justify-between gap-4 max-sm:block">
+			<p class="m-0 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">01 / latest writing</p>
+			<a class="font-mono text-sm text-[#d7c3ff] no-underline hover:text-[#8ff0a4]" href="/blog">All posts →</a>
 		</div>
-		<div class="card">
-			<h2>Selected work</h2>
-			<p>
-				A place to highlight projects, talks, writing, open source, case studies, or anything else
-				that helps tell the story of your work.
-			</p>
-			<p><a href="/work">Go to work →</a></p>
-		</div>
+		{
+			posts.length > 0 ? (
+				<ul class="m-0 grid list-none gap-0 p-0">
+					{posts.map((post, index) => (
+						<li class:list={["border-b border-white/15", index === 0 && "border-t"]}>
+							<a class="grid grid-cols-[1fr_auto] gap-4 py-4 text-[#f4efe7] no-underline hover:text-[#8ff0a4] max-sm:block" href={`/blog/${post.id}/`}>
+								<span class="before:text-[#8ff0a4] before:content-['→_']">{post.data.title}</span>
+								<span class="font-mono text-sm text-[#a7adba] max-sm:mt-1 max-sm:block">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p>No posts yet.</p>
+			)
+		}
+	</section>
+
+	<section class="mt-4 grid gap-4 border-t border-white/15 pt-8 md:grid-cols-2">
+		<article class="flex min-h-60 flex-col items-start justify-between rounded-[18px] border border-white/15 bg-[#161922]/75 p-6">
+			<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">02 / selected work</p>
+			<h2 class="m-0 mb-3 text-[clamp(1.6rem,4vw,2.45rem)] leading-[1.02] font-bold tracking-[-0.055em]">Projects, tools, systems.</h2>
+			<p class="text-[#a7adba]">A curated shelf for things shipped, explored, maintained, automated, or documented.</p>
+			<a class="text-[#d7c3ff] hover:text-[#8ff0a4]" href="/work">Open work directory →</a>
+		</article>
+		<article class="flex min-h-60 flex-col items-start justify-between rounded-[18px] border border-white/15 bg-[#161922]/75 p-6">
+			<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">03 / professional trace</p>
+			<h2 class="m-0 mb-3 text-[clamp(1.6rem,4vw,2.45rem)] leading-[1.02] font-bold tracking-[-0.055em]">CV, background, receipts.</h2>
+			<p class="text-[#a7adba]">A structured record of roles, skills, accomplishments, and professional context.</p>
+			<a class="text-[#d7c3ff] hover:text-[#8ff0a4]" href="/cv">Read CV →</a>
+		</article>
 	</section>
 </BaseLayout>

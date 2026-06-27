@@ -1,22 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About | Very Cool Person" description="About verycoolperson.com">
-	<section class="page-header">
-		<p class="eyebrow">About</p>
-		<h1>About me</h1>
-		<p class="lede">A short introduction goes here.</p>
+<BaseLayout title="About | David" description="About David">
+	<section class="py-12">
+		<p class="mb-4 font-mono text-xs font-bold tracking-[0.14em] text-[#8ff0a4] uppercase">About</p>
+		<h1 class="m-0 max-w-[16ch] text-[clamp(2.75rem,7vw,5.75rem)] leading-[1.02] font-bold tracking-[-0.055em]">About me</h1>
+		<p class="mt-6 max-w-2xl text-[clamp(1.15rem,3vw,1.45rem)] text-[#a7adba]">A short introduction goes here.</p>
 	</section>
 
-	<section class="prose">
+	<section class="[&_a]:text-[#d7c3ff] [&_a:hover]:text-[#8ff0a4] [&>*+*]:mt-4">
+		<p>Use this page for the human version of your bio: what you care about, what you are working on, and what people should know before following your work.</p>
 		<p>
-			Use this page for the human version of your bio: what you care about, what you are working on,
-			and what people should know before following your work.
-		</p>
-		<p>
-			You can keep this warm and personal, while the <a href="/cv">CV</a> page can stay structured and
-			professional.
+			You can keep this warm and personal, while the <a href="/cv">CV</a> page can stay structured and professional.
 		</p>
 	</section>
 </BaseLayout>
