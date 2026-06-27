@@ -1,0 +1,30 @@
+---
+import Bird from 'lucide-astro/Bird';
+import Github from 'lucide-astro/Github';
+import Rss from 'lucide-astro/Rss';
+
+interface Props {
+	includeRss?: boolean;
+}
+
+const { includeRss = true } = Astro.props;
+const iconProps = {
+	size: 22,
+	strokeWidth: 2,
+	'aria-hidden': 'true',
+};
+---
+
+<div class="icon-links" aria-label="Social links">
+	<a href="https://bsky.app/profile/verycoolperson.com" aria-label="Bluesky">
+		<Bird {...iconProps} />
+	</a>
+	<a href="https://github.com/" aria-label="GitHub">
+		<Github {...iconProps} />
+	</a>
+	{includeRss && (
+		<a href="/rss.xml" aria-label="RSS feed">
+			<Rss {...iconProps} />
+		</a>
+	)}
+</div>

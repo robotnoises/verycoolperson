@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
 	--bg: #fbfaf7;
 	--surface: #ffffff;
@@ -21,7 +23,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+	font-family: var(--font-atkinson);
 	color: var(--text);
 	font-size: 18px;
 	line-height: 1.65;
@@ -60,6 +62,7 @@ main.wide {
 h1,
 h2,
 h3 {
+	font-weight: 700;
 	line-height: 1.12;
 	letter-spacing: -0.03em;
 }
@@ -100,7 +103,7 @@ p {
 
 .brand,
 .nav-links a,
-.social-links a,
+.icon-links a,
 .site-footer a {
 	color: var(--text);
 	text-decoration: none;
@@ -111,8 +114,7 @@ p {
 }
 
 .nav-links,
-.social-links,
-.site-footer nav,
+.icon-links,
 .actions {
 	display: flex;
 	gap: 1rem;
@@ -122,13 +124,25 @@ p {
 
 .nav-links a.active,
 .nav-links a:hover,
-.social-links a:hover,
+.icon-links a:hover,
 .site-footer a:hover {
 	color: var(--accent-dark);
 }
 
-.social-links {
-	font-size: 0.9rem;
+.icon-links {
+	gap: 0.85rem;
+}
+
+.icon-links a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text);
+	text-decoration: none;
+}
+
+.icon-links a:hover {
+	color: var(--accent-dark);
 }
 
 .hero,
@@ -303,7 +317,7 @@ p {
 		padding: 1rem 0;
 	}
 
-	.social-links {
+	.site-header .icon-links {
 		display: none;
 	}
 

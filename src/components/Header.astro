@@ -1,6 +1,7 @@
 ---
-import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
+import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import SocialLinks from './SocialLinks.astro';
 ---
 
 <header class="site-header">
@@ -12,8 +13,6 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/cv">CV</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			{SOCIAL_LINKS.map((link) => <a href={link.href}>{link.label}</a>)}
-		</div>
+		<SocialLinks />
 	</nav>
 </header>

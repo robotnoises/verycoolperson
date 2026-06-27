@@ -1,13 +1,11 @@
 ---
-import { SOCIAL_LINKS, SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../consts';
+import SocialLinks from './SocialLinks.astro';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
 	<p>&copy; {year} {SITE_TITLE}.</p>
-	<nav aria-label="Footer links">
-		<a href="/rss.xml">RSS</a>
-		{SOCIAL_LINKS.map((link) => <a href={link.href}>{link.label}</a>)}
-	</nav>
+	<SocialLinks />
 </footer>
