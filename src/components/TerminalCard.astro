@@ -15,19 +15,19 @@ const commands = [
 ];
 ---
 
-<aside class="overflow-hidden rounded-none border border-white/10 bg-white/[0.015] font-mono max-lg:max-w-xl" aria-label="Current status">
-	<div class="flex gap-2 border-b border-white/10 p-4">
-		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
-		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
-		<span class="h-2.5 w-2.5 rounded-full border border-white/30"></span>
+<aside class="overflow-hidden rounded-none border-2 border-white/20 bg-white/[0.02] font-mono max-lg:max-w-xl" aria-label="Current status">
+	<div class="flex gap-2 border-b-2 border-white/20 p-4">
+		<span class="h-2.5 w-2.5 rounded-full border border-white/50"></span>
+		<span class="h-2.5 w-2.5 rounded-full border border-white/50"></span>
+		<span class="h-2.5 w-2.5 rounded-full border border-white/50"></span>
 	</div>
 
-	<div class="space-y-5 p-5 text-sm leading-7 text-[#a7adba]">
+	<div class="space-y-5 p-5 text-sm leading-7 text-zinc-400">
 		{
 			commands.map(({ command, output }) => (
 				<section>
 					<p class="m-0">
-						<span class="text-[#facc15]">$</span> {command}
+						<span class="text-yellow-300">$</span> {command}
 					</p>
 					{output.map((line) => (
 						<p class="m-0">{line}</p>
